@@ -1,0 +1,829 @@
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919194030 : 4
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919194103 : 4
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919194127 : 4
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919194405 : 2
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919195548 : 4
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919195613 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919195725 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919195752 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919213255 : 4
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919213811 : 2
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919213835 : 2
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919213859 : 3
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919214021 : 2
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919214156 : 3
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919214308 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919214511 : 89
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919214845 : 2
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919215142 : 6
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919215207 : 4
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919215255 : 4
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919215340 : 6
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919234915 : 6
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919235424 : 6
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919235519 : 9
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160919235548 : 6
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920000311 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920000549 : 2
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920001009 : 3
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920001127 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920001150 : 4
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920001332 : 6
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920001357 : 2
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920001421 : 2
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920001848 : 7
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920001910 : 4
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920002336 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920002400 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920002425 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920003435 : 5
+ /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160920003532 : 5
+
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211441 : 16 : 16
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211506 : 16 : 16
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212714 : 14 : 14
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212742 : 19 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212742 : 19 : 0
+
+
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211441 : 16 : 16
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211506 : 16 : 16
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211532 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211602 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211630 : 16 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211658 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211725 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211753 : 19 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211829 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211858 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130211926 : 20 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212000 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212026 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212052 : 15 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212120 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212147 : 272 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212401 : 270 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212616 : 16 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212648 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212714 : 14 : 14
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212742 : 19 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212811 : 12 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212838 : 12 : 12
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130212955 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213020 : 12 : 12
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213046 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213114 : 13 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213140 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213208 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213233 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213259 : 0 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213322 : 16 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213349 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213414 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213440 : 94 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213537 : 12 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213606 : 13 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213632 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213658 : 13 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213725 : 11 : 11
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213752 : 16 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213823 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213848 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130213914 : 104 : 104
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214213 : 16 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214249 : 0 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214311 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214338 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214404 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214431 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214652 : 13 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214719 : 15 : 15
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214750 : 12 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214819 : 10 : 10
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214844 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214911 : 15 : 15
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130214938 : 12 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130215004 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170130215030 : 276 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131033051 : 96 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131033245 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131033323 : 197 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131052852 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131052933 : 15 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053003 : 17 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053031 : 12 : 12
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053100 : 41 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053139 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053207 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053235 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053303 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053330 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053359 : 17 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053428 : 24 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053513 : 16 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053541 : 12 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053610 : 22 : 22
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053646 : 12 : 12
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053713 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053743 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170131053811 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215125742 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215125805 : 5 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215125827 : 4 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215125852 : 6 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215125922 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215125946 : 7 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215130011 : 4 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215141707 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215141730 : 3 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215141753 : 7 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215141817 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215141841 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215141905 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215141930 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215141955 : 10 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142026 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142048 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142112 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142136 : 10 : 7
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142205 : 3 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142229 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142251 : 4 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142314 : 4 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142338 : 5 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142402 : 85 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142454 : 4 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142518 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142542 : 5 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142607 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142630 : 4 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142657 : 7 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142723 : 3 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142747 : 4 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142811 : 7 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142837 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142904 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142927 : 4 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215142950 : 88 : 88
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143305 : 8 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143331 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143354 : 4 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143417 : 4 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143440 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143503 : 5 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143529 : 7 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143556 : 6 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143622 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143646 : 5 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143712 : 7 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143739 : 6 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143806 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215143830 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215151402 : 6 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215151427 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215151452 : 3 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215151515 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215151538 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215151601 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215151624 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215151648 : 158 : 137
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170215152619 : 159 : 137
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170216181917 : 49 : 33
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170216182018 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170216182051 : 163 : 159
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170216200056 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170216200127 : 6 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170216200153 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170216200216 : 4 : 3
+
+
+
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307221713 : 30 : 20
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307221753 : 75 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307221923 : 158 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307222208 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307222238 : 272 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307222427 : 149 : 138
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307222714 : 17 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307222803 : 15 : 10
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307222832 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307222901 : 14 : 10
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307222931 : 12 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223010 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223037 : 269 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223227 : 65 : 54
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223435 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223504 : 11 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223532 : 21 : 10
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223601 : 17 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223635 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223703 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223731 : 17 : 17
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223759 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223826 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223853 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223919 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307223950 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224018 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224047 : 28 : 17
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224134 : 17 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224205 : 11 : 7
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224231 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224257 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224325 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224353 : 13 : 13
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224419 : 10 : 10
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224447 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224514 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224541 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224609 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224636 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224704 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224733 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224800 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224829 : 14 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224857 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224927 : 11 : 11
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307224956 : 12 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225026 : 12 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225055 : 14 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225125 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225156 : 14 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225227 : 14 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225258 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225325 : 13 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225353 : 11 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225421 : 15 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225454 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225527 : 15 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225559 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225632 : 17 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225704 : 16 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225736 : 16 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225808 : 15 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225841 : 11 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307225910 : 273 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307230104 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307230127 : 14 : 10
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307230226 : 14 : 10
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307230327 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170307230358 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308181844 : 30 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308181917 : 75 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182024 : 158 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182225 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182253 : 272 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182420 : 149 : 4
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182624 : 17 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182651 : 15 : 1
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182718 : 15 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182744 : 14 : 4
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182810 : 12 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182837 : 12 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308182902 : 269 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183036 : 65 : 2
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183124 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183150 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183216 : 21 : 3
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183244 : 17 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183318 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183344 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183410 : 17 : 17
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183436 : 11 : 1
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183502 : 11 : 1
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183527 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183552 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183619 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183645 : 12 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183712 : 28 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183747 : 17 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183814 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183839 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183904 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183930 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308183955 : 13 : 13
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184019 : 10 : 10
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184045 : 9 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184110 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184136 : 12 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184202 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184227 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184255 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184322 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184347 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184415 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184442 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184510 : 11 : 11
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184536 : 12 : 12
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184603 : 12 : 12
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184629 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184657 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184728 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184756 : 14 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184823 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184848 : 13 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184915 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308184941 : 15 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185009 : 15 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185039 : 15 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185108 : 15 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185136 : 17 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185207 : 16 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185236 : 16 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185304 : 15 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185335 : 11 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185402 : 273 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185553 : 0 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185616 : 14 : 10
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185713 : 14 : 10
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185811 : 10 : 0
+ /home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170308185841 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309153948 : 17 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154017 : 15 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154043 : 18 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154113 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154139 : 20 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154210 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154236 : 12 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154304 : 13 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154329 : 12 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154355 : 11 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154420 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154450 : 28 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154520 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154548 : 15 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154616 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154645 : 14 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154711 : 21 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154743 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154809 : 38 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154842 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154910 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309154938 : 15 : 0
+
+
+
+
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309201641 : 28 : 28
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309201718 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309201744 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309201810 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309201836 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309201903 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309201931 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309201959 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202024 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202053 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202120 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202148 : 12 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202215 : 13 : 13
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202242 : 13 : 13
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202310 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202337 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202407 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202436 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202505 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202531 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202558 : 15 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202625 : 23 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202655 : 21 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202726 : 23 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202757 : 21 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202827 : 26 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202859 : 23 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309202930 : 23 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309203002 : 19 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309203035 : 18 : 7
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309203103 : 314 : 33
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309203248 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309203311 : 18 : 14
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309203410 : 18 : 14
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309203509 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309203538 : 9 : 0
+
+
+---------------------------------------------------------------------------------
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309234905 : 21 : 21
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309234938 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235002 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235025 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235050 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235114 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235139 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235204 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235228 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235254 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235318 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235343 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235407 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235432 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235456 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235521 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235545 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235608 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235632 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235656 : 7 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235721 : 7 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235745 : 17 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235813 : 15 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235841 : 17 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235909 : 15 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235936 : 20 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000006 : 17 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000034 : 17 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000102 : 13 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000131 : 8 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000156 : 276 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000417 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000439 : 12 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000537 : 12 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000635 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000700 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309234905 : 21 : 21
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309234938 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235002 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235025 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235050 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235114 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235139 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235204 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235228 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235254 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235318 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235343 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235407 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235432 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235456 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235521 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235545 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235608 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004344 : 23 : 23
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004414 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004441 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004510 : 19 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004538 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004606 : 36 : 7
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004644 : 18 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004714 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004740 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004805 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004831 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310004856 : 16 : 16
+
+
+
+
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005433 : 11 : 11
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005500 : 16 : 16
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005526 : 16 : 16
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005552 : 16 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005621 : 15 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005649 : 25 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005721 : 13 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005748 : 14 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005815 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005843 : 13 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005911 : 29 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310005948 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310010014 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310010040 : 23 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310010110 : 18 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310010138 : 1082 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310011030 : 1080 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310011949 : 52 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012050 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012115 : 19 : 19
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012144 : 26 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012215 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012243 : 32 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012317 : 15 : 15
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012344 : 13 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012411 : 14 : 14
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012438 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012505 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012533 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012600 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012627 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012653 : 31 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012732 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012753 : 15 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012819 : 30 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012856 : 31 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310012934 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013000 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013026 : 95 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013132 : 13 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013201 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013228 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013253 : 20 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013325 : 17 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013354 : 12 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013421 : 17 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013453 : 36 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013528 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013554 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310013620 : 3729 : 3729
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020538 : 21 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020614 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020636 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020702 : 16 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020729 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020755 : 16 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020823 : 20 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020852 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020919 : 16 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310020947 : 20 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021017 : 20 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021048 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021115 : 21 : 21
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021148 : 16 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021217 : 11 : 11
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021242 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021308 : 18 : 18
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021335 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021401 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310021426 : 973 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310040832 : 178 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310041119 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310041154 : 806 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050214 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050249 : 18 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050317 : 20 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050347 : 13 : 13
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050415 : 41 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050451 : 41 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050531 : 15 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050558 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050624 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050650 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050717 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050745 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050812 : 28 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050844 : 34 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310050935 : 25 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051005 : 42 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051041 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051107 : 23 : 23
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051141 : 12 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051208 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051234 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051300 : 16 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051327 : 40 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051404 : 374 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310051855 : 578 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310052638 : 20 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310052711 : 295 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310052857 : 20 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310052926 : 24 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310052956 : 21 : 7
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310053024 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310053053 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310053119 : 1066 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310053858 : 17 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310053926 : 15 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310053953 : 18 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310054029 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310054054 : 17 : 0
+
+
+
+
+
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309234905 : 21 : 21
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309234938 : 3 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235002 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235025 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235050 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235114 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235139 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235204 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235228 : 5 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235254 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235318 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235343 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235407 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235432 : 5 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235456 : 6 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235521 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235545 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235608 : 2 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235632 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235656 : 7 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235721 : 7 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235745 : 17 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235813 : 15 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235841 : 17 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235909 : 15 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170309235936 : 20 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000006 : 17 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000034 : 17 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000102 : 13 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000131 : 8 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000156 : 276 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000417 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000439 : 12 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000537 : 12 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000635 : 4 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310000700 : 3 : 0
+
+
+
+
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131327 : 23 : 23
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131359 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131427 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131456 : 19 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131524 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131554 : 36 : 7
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131637 : 18 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131706 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131732 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131757 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131824 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170310131849 : 16 : 16
+
+
+
+
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184439 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184455 : 11 : 11
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184522 : 16 : 16
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184548 : 16 : 16
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184614 : 16 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184645 : 15 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184714 : 25 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184745 : 13 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184812 : 14 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184839 : 24 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184919 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311184948 : 13 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311185015 : 29 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311185055 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311185121 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311185147 : 23 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311185219 : 18 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311185247 : 1082 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311190316 : 1080 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191345 : 52 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191446 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191512 : 19 : 19
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191541 : 26 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191613 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191640 : 15 : 15
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191707 : 13 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191734 : 14 : 14
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191802 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191829 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191857 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191925 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311191951 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192018 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192040 : 30 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192116 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192142 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192208 : 95 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192316 : 13 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192347 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192414 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192439 : 17 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192508 : 12 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192535 : 17 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192607 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192634 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311192702 : 3729 : 3729
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200108 : 21 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200144 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200207 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200233 : 16 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200301 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200327 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200353 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200420 : 21 : 21
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200456 : 16 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200527 : 11 : 11
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200553 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200619 : 18 : 18
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200648 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200715 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311200740 : 973 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311220304 : 178 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311220606 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311220642 : 806 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230401 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230436 : 18 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230505 : 20 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230534 : 13 : 13
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230602 : 41 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230641 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230708 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230734 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230802 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230829 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230857 : 28 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311230930 : 34 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231023 : 25 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231054 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231121 : 23 : 23
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231158 : 12 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231225 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231252 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231318 : 16 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231346 : 40 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231424 : 374 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170311231952 : 578 : 0
+
+
+
+
+
+
+
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312153514 : 20 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312153550 : 295 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312153724 : 896 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312155007 : 20 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312155036 : 26 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312155107 : 24 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312155136 : 21 : 7
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312155203 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312155233 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312155259 : 1066 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160010 : 209 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160226 : 17 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160253 : 15 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160319 : 31 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160351 : 18 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160428 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160455 : 17 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160525 : 23 : 23
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160555 : 15 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160623 : 15 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160650 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160717 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160745 : 19 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160813 : 12 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160840 : 36 : 7
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160919 : 18 : 18
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312160949 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161015 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161040 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161106 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161130 : 16 : 16
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161155 : 28 : 28
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161230 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161256 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161321 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161347 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161413 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161441 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161509 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161535 : 12 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161604 : 15 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161632 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161659 : 12 : 12
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161725 : 13 : 13
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161752 : 13 : 13
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161820 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161848 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161917 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312161946 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162014 : 11 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162039 : 14 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162106 : 15 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162132 : 23 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162202 : 21 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162232 : 23 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162302 : 21 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162332 : 26 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162404 : 23 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162436 : 23 : 6
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162507 : 19 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162540 : 18 : 7
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162607 : 314 : 33
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162757 : 0 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162819 : 18 : 14
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312162917 : 18 : 14
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163016 : 10 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163045 : 9 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163111 : 25 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163140 : 32 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163213 : 31 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163247 : 15 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163314 : 31 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163349 : 16 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163417 : 18 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163444 : 18 : 2
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163512 : 15 : 1
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163539 : 16 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163606 : 20 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163636 : 36 : 8
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163708 : 16 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163737 : 20 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163806 : 20 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163836 : 18 : 3
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163903 : 41 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312163943 : 15 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312164009 : 42 : 0
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312164045 : 16 : 4
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312164114 : 20 : 5
+/home/dsl/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.170312164143 : 20 : 5

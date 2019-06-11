@@ -1,0 +1,95 @@
+#define _XOPEN_SOURCE 500
+
+#include <unistd.h>
+#include <semaphore.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <limits.h>
+
+#include "crc32c.c"
+
+#define REDO_HEADER_MAGIC_NUMBER "E2REDO01"
+#define REDO_BLOCK_MAGIC_NUMBER  "E2REDO02"
+
+#define E2REDO_STATE_FINISHED   0x1
+
+#define BLK_TAG_REPLAYED 0x1
+
+struct redo_header {
+  char     magic[8];          /* "E2REDO01" */
+  uint64_t num_keys;        /* how many keys? */ // Not required - Commit block marks end of transaction
+  uint64_t super_offset;    /* where in the file is the superblock copy? */ //TODO 
+  uint64_t key_offset;      /* where do the key/data block chunks start? */
+//  __le32 block_size;      /* block size of the undo file */
+//  __le32 fs_block_size;   /* block size of the target device */
+  uint32_t sb_crc;          /* crc32c of the superblock */                  //TODO
+  uint32_t state;           /* e2redo state flag - set to 1 to after all blocks flushed to redo log */
+  //__le32 f_compat;        /* compatible features */
+  //__le32 f_incompat;      /* incompatible features (none so far) */
+  //__le32 f_rocompat;      /* ro compatible features (none so far) */
+//  __le32 pad32;           /* padding for fs_offset */
+//  __le64 fs_offset;       /* filesystem offset */
+  uint32_t header_crc;      /* crc32c of this header (but not this field) */
+  uint8_t   padding[468];    /* padding */
+};
+
+struct redo_block_tag {
+  uint64_t  offset;               // offset in block dev
+  uint32_t  size;                // Size in bytes
+//  __le32 replayed;
+  uint32_t blk_crc;
+
+};
+
+struct redo_block {
+  uint32_t magic;
+  uint32_t crc;
+  uint64_t reserved;
+
+  struct redo_block_tag tags[];
+};
+
+struct redo_private_data {
+  // variables related to redo file
+  char* redo_file;
+  int   redo_fd;
+  int   dev_fd;
+
+  int tdb_written;
+
+  // variables for read/write
+  uint32_t redo_block_size;
+  uint32_t dev_block_size;
+  
+
+  // variables for redo log
+  struct redo_header hdr;
+  struct redo_block  *keyb;
+  uint64_t num_keys;		// number of redo_blocks
+  uint64_t redo_blk_num;  	// total number of blocks used in redo log
+  uint64_t keys_in_block;
+  uint64_t redo_block_offset;     // offset of current redo_block
+
+  uint64_t log_offset;
+
+  
+};
+
+
+#define REDO_LOG_BLOCK_SIZE   1024
+#define KEYS_PER_BLOCK(d) (((d)->redo_block_size / sizeof(struct redo_block_tag)) - 1)
+
+struct redo_private_data *redo_data;
+
+
+int redo_open(char *redo, int dev_fd, int flags);
+int redo_close();
+int redo_write(uint64_t offset, uint32_t size, void* buf);
+int redo_replay(int flush);
+int redo_mark_done();
+int redo_flush();
+
+

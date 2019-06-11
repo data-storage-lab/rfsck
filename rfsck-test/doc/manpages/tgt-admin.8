@@ -1,0 +1,198 @@
+'\" t
+.\"     Title: tgt-admin
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 04/13/2018
+.\"    Manual: [FIXME: manual]
+.\"    Source: [FIXME: source]
+.\"  Language: English
+.\"
+.TH "TGT\-ADMIN" "8" "04/13/2018" "[FIXME: source]" "[FIXME: manual]"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+tgt-admin \- Linux SCSI Target Configuration Tool
+.SH "SYNOPSIS"
+.HP \w'\fBtgt\-admin\fR\ 'u
+\fBtgt\-admin\fR [\-e\ \-\-execute] [\-\-delete\ <value>] [\-\-offline\ <value>] [\-\-ready\ <value>] [\-s\ \-\-show] [\-C\ \-\-control\-port\ <NNNN>] [\-c\ \-\-conf\ <file>] [\-\-ignore\-errors] [\-f\ \-\-force] [\-p\ \-\-pretend] [\-\-dump] [\-v\ \-\-verbose] [\-h\ \-\-help]
+.SH "DESCRIPTION"
+.PP
+tgt\-admin is a utility which allows a persistent configuration of targets and luns\&. It uses tgtadm commands to create, delete and show targets\&.
+.SH "OPTIONS"
+.PP
+\fB\-e, \-\-execute\fR
+.RS 4
+Read /etc/tgt/targets\&.conf and execute tgtadm commands\&. If the target already exists, it won\*(Aqt be processed\&. See \-\-update\&.
+.RE
+.PP
+\fB\-d, \-\-delete <value>\fR
+.RS 4
+Delete all or selected targets\&. The target will be deleted only if it\*(Aqs not used (no initiator is connected to it)\&.
+.sp
+If you want to delete targets which are in use, you have to add the "\-\-force" flag\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Example usage:
+    \-\-delete ALL            \- delete all targets
+    \-\-delete tid=4          \- delete target 4
+                              (target with tid 4)
+    \-\-delete iqn\&.2008\-08\&.com\&.example:some\&.target
+                            \- delete this target
+	      
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.PP
+\fB\-\-offline\fR
+.RS 4
+Put all or selected targets in offline state\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Example usage:
+    \-\-offline ALL           \- offline all targets
+    \-\-offline tid=4         \- offline target 4
+                              (target with tid 4)
+    \-\-offline iqn\&.2008\-08\&.com\&.example:some\&.target
+                            \- offline this target
+	      
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.PP
+\fB\-\-ready\fR
+.RS 4
+Put all or selected targets in ready state\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Example usage:
+    \-\-ready ALL             \- ready all targets
+    \-\-ready tid=4           \- ready target 4
+                              (target with tid 4)
+    \-\-ready iqn\&.2008\-08\&.com\&.example:some\&.target
+                            \- ready this target
+	    
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.PP
+\fB\-\-update <value>\fR
+.RS 4
+Update all or selected targets\&. The target will be updated only if it\*(Aqs not used (no initiator is connected to it)\&.
+.sp
+If you want to update targets which are in use, you have to add "\-\-force" flag\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Example usage:
+    \-\-update ALL             \- ready all targets
+    \-\-update tid=4           \- ready target 4
+                               (target with tid 4)
+    \-\-update iqn\&.2008\-08\&.com\&.example:some\&.target
+                             \- update this target
+	    
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.PP
+\fB\-s, \-\-show\fR
+.RS 4
+Show all the targets\&.
+.RE
+.PP
+\fB\-C, \-\-control\-port <NNNN>\fR
+.RS 4
+It is possible to run multiple concurrent instances of tgtd on a host\&. This argument is used to control which instance the tgt\-admin command will operate on\&.
+.RE
+.PP
+\fB\-c, \-\-conf <configuration file>\fR
+.RS 4
+Specify an alternative configuration file instead of /etc/tgt/targets\&.conf, which is the default\&.
+.RE
+.PP
+\fB\-\-ignore\-errors\fR
+.RS 4
+Continue even if tgtadm exits with non\-zero code\&.
+.RE
+.PP
+\fB\-f, \-\-force\fR
+.RS 4
+Force some operations even if the target is in use\&.
+.RE
+.PP
+\fB\-p, \-\-pretend\fR
+.RS 4
+Only print tgtadm options which would be used; don\*(Aqt execute any actions\&. Assumes \-v\&.
+.RE
+.PP
+\fB\-\-dump\fR
+.RS 4
+Dump current tgtd configuration\&. Note: does not include detailed parameters, like write caching\&.
+.RE
+.PP
+\fB\-v, \-\-verbose\fR
+.RS 4
+Increase verbosity (show tgtadm commands used)\&.
+.RE
+.PP
+\fB\-h, \-\-help\fR
+.RS 4
+Display a list of available options and exit\&.
+.RE
+.SH "FILES"
+.PP
+\fB/etc/tgt/targets\&.conf\fR
+.RS 4
+Configuration file for tgt\-admin\&.
+.RE
+.PP
+\fB/usr/share/doc/tgt/targets\&.conf\&.example\fR
+.RS 4
+Example configuration file for tgt\-admin\&.
+.RE
+.SH "SEE ALSO"
+.PP
+targets\&.conf(5), tgtd(8), tgtadm(8), tgtimg(8), tgt\-setup\-lun(8)\&.
+\m[blue]\fB\%http://stgt.sourceforge.net/\fR\m[]
+.SH "REPORTING BUGS"
+.PP
+Report bugs to <stgt@vger\&.kernel\&.org>

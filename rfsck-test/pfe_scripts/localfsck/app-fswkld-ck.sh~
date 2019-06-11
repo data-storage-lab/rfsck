@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#TODO: check fswkld file content
+#echo "TODO: $0"
+absme=`readlink -f $0`
+abshere=`dirname $absme`
+
+TEST_WKLD_CHK=$abshere/test_wkld/wkld_validate.sh
+echo -e "Executing $TEST_WKLD_CHK $MNT $PFE_LOG_DIR 2"
+$TEST_WKLD_CHK $MNT $PFE_LOG_DIR 2

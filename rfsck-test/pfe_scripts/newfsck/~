@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Replay and cut FSCK1 
+
+
+absme=`readlink -f $0`
+abshere=`dirname $absme`
+. $abshere/pfe_helper.sh
+
+    echo
+    echo "### Comparing BACKING_STORE image for IO #${it} with original image"
+    echo
+    #echo "Executing: cp ${RAMIMG_REPLAY_FAULT} - ${FAULT_IMG_COPY}"
+    #echo "RAMING_REPLAY_FAULT: ${RAMIMG_REPLAY_FAULT}"
+    #echo "FAULT_IMG_COPY: ${FAULT_IMG_COPY}"
+    #echo "TEMP_MNT: $TEMP_MNT"
+    #echo "COPY_FILE_MNT: $COPY_FILE_MNT"
+#    <<COMMENT1
+    cp ${RAMIMG_REPLAY_FAULT} $FAULT_IMG_COPY
+    echo "Executing: mount $FAULT_IMG_COPY  $TEMP_MNT"
+    mount $FAULT_IMG_COPY  $TEMP_MNT
+    if [ $? -eq 0 ]; then
+        #echo "$FAULT_IMG_COPY mounted to $TEMP_MNT"
+        echo "Executing: mount $COPY_FILE $COPY_FILE_MNT"
+        mount $COPY_FILE  $COPY_FILE_MNT
+        if [ $? -eq 0 ]; then
+            #echo "$COPY_FILE mounted to $COPY_FILE_MNT"
+            ### Recursively compare all the subdirectories 
+            ### inside the two image files. If they differ
+            ### then there's an error.
+            echo -e "\nExecuting diff --brief -r $TEMP_MNT $COPY_FILE_MNT"
+            diff --brief -Nr $TEMP_MNT $COPY_FILE_MNT
+            sleep 2
+            echo -e "\nUnmount $COPY_FILE"
+            umount $COPY_FILE_MNT
+            #sleep 2
+        else
+            echo "Unable to mount $COPY_FILE"
+        fi
+        echo "Unmount ${FAULT_IMG_COPY}"
+        sleep 2
+        umount $TEMP_MNT
+        #sleep 2
+    else
+        ### FSCK2 fails to fix the corrupted image file
+        echo "Unable to mount ${FAULT_IMG_COPY}"
+    fi
+#COMMENT1

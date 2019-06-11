@@ -1,0 +1,318 @@
+'\" t
+.\"     Title: targets.conf
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 04/13/2018
+.\"    Manual: [FIXME: manual]
+.\"    Source: [FIXME: source]
+.\"  Language: English
+.\"
+.TH "TARGETS\&.CONF" "5" "04/13/2018" "[FIXME: source]" "[FIXME: manual]"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+targets.conf \- Linux SCSI Target Configuration File
+.SH "DESCRIPTION"
+.PP
+tgt\-admin uses /etc/tgt/targets\&.conf to initialize tgtd configuration, by default\&. Its layout uses a HTML\-like structure, with a hierarchy of nested tags to define targets and LUNs\&.
+.SH "CONFIGURATION FILE SYNTAX"
+.PP
+Global directives configure options that are global to tgtd\*(Aqs configuration, as well as defining exported targets, via target sections\&.
+.PP
+Target sections contain directives specific to one target device\&. They define each target\*(Aqs exported LUNs via "backing\-store" and "direct\-store" directives, as well as other target\-wide options\&.
+.PP
+LUN directives ("backing\-store" and "direct\-store") may contain options specific to a single exported logical unit\&.
+.SH "GLOBAL DIRECTIVES"
+.PP
+With the exception of target directives, each of these should occur at most once\&.
+.PP
+\fB<target <IQN>>\fR
+.RS 4
+Defines a the start of a target definition\&. IQN is an ISCSI Qualified Name such as "iqn\&.2001\-04\&.com\&.example:storage1"\&. See "ISCSI" on Wikipedia for more information on IQNs\&.
+.sp
+Within this block should be target\-level directives, as documented below\&.
+.sp
+The target definition ends with "</target>"
+.RE
+.PP
+\fBdefault\-driver <lld>\fR
+.RS 4
+Instead of specifying a driver type for each target, default\-driver defines a default low\-level driver for all exported targets\&. It may be overriden on a per\-target basis\&. Valid lld values are "iscsi" or "iser"\&. Since iscsi is assumed if this directive is not present, it is only generally needed if iser is the desired default\&.
+.RE
+.PP
+\fBinclude <path>\fR
+.RS 4
+Include the configuration from another configuration file\&. Wildcards are allowed, so an example like "include /etc/tgt/xen/*\&.conf" is allowed\&.
+.RE
+.PP
+\fBignore\-errors yes\fR
+.RS 4
+Errors from tgtadm will be ignored\&. Default is no\&.
+.RE
+.PP
+\fBcontrol\-port <port>\fR
+.RS 4
+Define a different local socket key for communicating with tgtd\&. Defaults to 0\&. This is only generally useful if multiple instances of tgtd are in use\&.
+.RE
+.PP
+\fBiSNSServerIP <addr>\fR
+.RS 4
+Define the address of the iSNS server in IPv4 dotted\-quad address format\&. Required when using iSNS, otherwise ignored\&.
+.RE
+.PP
+\fBiSNSAccessControl <value>\fR
+.RS 4
+Set iSNS access control\&. Valid values are "On" or "Off"\&. Required when using iSNS, otherwise ignored\&.
+.RE
+.PP
+\fBiSNSServerPort <port>\fR
+.RS 4
+Set a different iSNS server port\&. Default is 3205\&. Optional when using iSNS, otherwise ignored\&.
+.RE
+.PP
+\fBiSNS On\fR
+.RS 4
+Enable iSNS\&. Only valid value is "On"\&. Default is off\&.
+.RE
+.PP
+\fBincomingdiscoveryuser <user> <userpassword>\fR
+.RS 4
+Define iscsi incoming discovery authentication setting\&. If no value is given, no authentication is performed\&.
+.RE
+.PP
+\fBoutgoingdiscoveryuser <user> <userpassword>\fR
+.RS 4
+Define iscsi outgoing discovery authentication setting\&. If no value is given, no authentication is performed\&.
+.RE
+.SH "TARGET\-LEVEL DIRECTIVES"
+.PP
+Each target may export multiple block devices, or logical units (LUNs)\&. For the purposes of LUN numbering, backing\-store directives are processed before direct\-store directives\&.
+.PP
+\fBbacking\-store <path>\fR
+.RS 4
+Defines a logical unit (LUN) exported by the target\&. This may specify either a regular file, or a block device\&.
+.RE
+.PP
+\fBdirect\-store <path>\fR
+.RS 4
+Defines a direct mapped logical unit (LUN) with the same properties as the physical device (such as VENDOR_ID, SERIAL_NUM, etc\&.)
+.RE
+.PP
+\fBdriver <lld>\fR
+.RS 4
+Define the low\-level driver to use for this target, either "iscsi" or "iser" (without quotes)\&. This overrides the "default\-driver" global directive\&.
+.RE
+.PP
+\fBinitiator\-address <addr>\fR
+.RS 4
+Allows connections only from the specified IP address\&. Defaults to ALL if no initiator\-address directive is specified\&.
+.RE
+.PP
+\fBinitiator\-name <addr>\fR
+.RS 4
+Allows connections only from the specified initiator name\&.
+.RE
+.PP
+\fBincominguser <user> <userpassword>\fR
+.RS 4
+Define iscsi incoming authentication setting\&. If no "incominguser" is specified, it is not used\&. This directive may be used multiple times per target\&.
+.RE
+.PP
+\fBoutgoinguser <user> <userpassword>\fR
+.RS 4
+Define iscsi outgoing authentication setting\&. If no "outgoinguser" is specified, it is not used\&. This directive may be used multiple times per target\&.
+.RE
+.PP
+\fBcontroller_tid <val>\fR
+.RS 4
+Define the tid of the controller\&. Default is next available integer\&.
+.RE
+.SH "LUN\-LEVEL DIRECTIVES"
+.PP
+All of these may be listed at the target level (and apply to all LUNs) or within an individual LUN\*(Aqs definition, if it is defined using the container\-style, multi\-line definition, rather than single\-line definition format:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+<backing\-store /dev/sdb1>
+  # LUN directives go here
+</backing\-store>
+
+<direct\-store /dev/sdb1>
+  # LUN directives go here
+</direct\-store>
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+It is recommended to use either single\-line or container\-style LUN definitions within a target\&. Mixing styles can cause parser errors\&.
+.PP
+\fBwrite\-cache <val>\fR
+.RS 4
+"on" or "off", default on\&.
+.RE
+.PP
+\fBscsi_id <val>\fR
+.RS 4
+.RE
+.PP
+\fBscsi_sn <val>\fR
+.RS 4
+.RE
+.PP
+\fBvendor_id <val>\fR
+.RS 4
+.RE
+.PP
+\fBproduct_id <val>\fR
+.RS 4
+.RE
+.PP
+\fBproduct_rev <val>\fR
+.RS 4
+.RE
+.PP
+\fBsense_format <val>\fR
+.RS 4
+.RE
+.PP
+\fBremovable <val>\fR
+.RS 4
+.RE
+.PP
+\fBpath <val>\fR
+.RS 4
+.RE
+.PP
+\fBmode_page <val>\fR
+.RS 4
+.RE
+.PP
+\fBreadonly <val>\fR
+.RS 4
+.RE
+.PP
+\fBdevice\-type <val>\fR
+.RS 4
+.RE
+.PP
+\fBbs\-type <val>\fR
+.RS 4
+.RE
+.PP
+\fBallow\-in\-use <val>\fR
+.RS 4
+.RE
+.PP
+\fBblock\-size <val>\fR
+.RS 4
+Specify the block size for this LUN\&.
+.RE
+.PP
+\fBlbppbe <val>\fR
+.RS 4
+Specify the Logical blocks per physical block exponent\&. By default TGTD will set the lbppbe to automatically match the underlying filesystem\&. Use this parameter to override that setting\&.
+.sp
+This is an internal option that should not be set directly\&.
+.RE
+.PP
+\fBla_lba <val>\fR
+.RS 4
+Specify the lowest aligned logical block address\&. This is an internal option that should not be set directly\&.
+.RE
+.PP
+\fBoptimal_xfer_gran <val>\fR
+.RS 4
+Specify the optimal transfer granularity, to be reflected in the Block Limits VPD\&. This is an internal option that should not be set directly\&.
+.RE
+.PP
+\fBoptimal_xfer_len <val>\fR
+.RS 4
+Specify the optimal transfer length, to be reflected in the Block Limits VPD\&. This is an internal option that should not be set directly\&.
+.RE
+.PP
+\fBparams <vals>\fR
+.RS 4
+Pass additional parameters to tgtadm\&.
+.RE
+.SH "CONFIGURATION FILE EXAMPLE"
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Example configuration file:
+
+<target iqn\&.2007\-04\&.com\&.example:san\&.monitoring>
+  backing\-store /dev/san/monitoring
+
+  # if no "incominguser" is specified, it is not used
+  incominguser backup secretpass12
+
+  # defaults to ALL if no "initiator\-address" is specified
+  initiator\-address 192\&.168\&.1\&.2
+</target>
+
+<target iqn\&.2007\-02\&.com\&.example:san\&.xen1>
+  backing\-store /dev/san/xen1\-disk1 # LUN1
+  direct\-store /dev/san/xen1\-disk2  # LUN2
+
+  initiator\-address 192\&.168\&.1\&.2     # Allowed IP
+  initiator\-address 192\&.168\&.5\&.6     # Allowed IP
+
+  incominguser user1 secretpass12
+  incominguser user2 secretpass23
+
+  outgoinguser userA secretpassA
+</target>
+
+<target iqn\&.2007\-02\&.com\&.example:san\&.xen2>
+  backing\-store /dev/san/xen2
+</target>
+
+<target iqn\&.2007\-06\&.com\&.example:san\&.vmware1>
+  backing\-store /dev/san/vmware1
+</target>
+	
+.fi
+.if n \{\
+.RE
+.\}
+.SH "FILES"
+.PP
+\fB/etc/tgt/targets\&.conf\fR
+.RS 4
+Configuration file for tgt\-admin\&.
+.RE
+.PP
+\fB/usr/share/doc/tgt/targets\&.conf\&.example\fR
+.RS 4
+Example configuration file for tgt\-admin\&.
+.RE
+.SH "SEE ALSO"
+.PP
+tgtd(8), tgtadm(8), tgtimg(8), tgt\-setup\-lun(8)\&.
+\m[blue]\fB\%http://stgt.sourceforge.net/\fR\m[]
+.SH "REPORTING BUGS"
+.PP
+Report bugs to <stgt@vger\&.kernel\&.org>

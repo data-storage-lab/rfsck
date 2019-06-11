@@ -1,0 +1,2487 @@
+/home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944
+
+Executing touch /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld
+
+
+Executing touch /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+
+total 4
+-rwxr-xr-x 1 root root 1865 Jul  7 15:39 pfe_config.sh
+-rw-r--r-- 1 root root    0 Jul  7 15:39 pfe_err_block_log
+-rw-r--r-- 1 root root    0 Jul  7 15:39 pfe_io_head_split_log.fswkld
+
+################################################################
+### STAGE #1 : RUN & RECORD FS WKLD
+################################################################
+Thu Jul  7 15:39:44 MDT 2016
+
+### [target] setup
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+Thu Jul  7 15:39:47 MDT 2016
+###### SETUP iSCSI TARGET
+### check tgtd started
+tgtd exists.
+Thu Jul  7 15:39:47 MDT 2016
+### define & create an iscsi target name
+### add /home/rameshwar/pfe_images/img.128M.empty.ext4.fswkld as backing store
+### enable the target to accept any initiator
+### view the target created
+Target 1: iqn.2016-06.lustre:node1
+    System information:
+        Driver: iscsi
+        State: ready
+    I_T nexus information:
+    LUN information:
+        LUN: 0
+            Type: controller
+            SCSI ID: IET     00010000
+            SCSI SN: beaf10
+            Size: 0 MB, Block size: 1
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: null
+            Backing store path: None
+            Backing store flags: 
+        LUN: 1
+            Type: disk
+            SCSI ID: IET     00010001
+            SCSI SN: beaf11
+            Size: 134 MB, Block size: 512
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: rdwr
+            Backing store path: /home/rameshwar/pfe_images/img.128M.empty.ext4.fswkld
+            Backing store flags: 
+    Account information:
+    ACL information:
+        ALL
+
+check port 3260
+tcp        0      0 0.0.0.0:3260            0.0.0.0:*               LISTEN      15036/tgtd      
+tcp6       0      0 :::3260                 :::*                    LISTEN      15036/tgtd      
+
+####### TARGET SETUP DONE!
+######### Setup iSCSI Initiators
+### restart iscsi
+ * Unmounting iscsi-backed filesystems
+   ...done.
+ * Disconnecting iSCSI targets
+Logging out of session [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260]
+Logout of [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+   ...done.
+ * Stopping iSCSI initiator service
+   ...done.
+ * Starting iSCSI initiator service iscsid
+   ...done.
+ * Setting up iSCSI targets
+
+iscsiadm: No records found
+   ...done.
+ * Mounting network filesystems
+   ...done.
+### discover target
+sudo iscsiadm --mode discovery --type sendtargets --portal 127.0.0.1
+127.0.0.1:3260,1 iqn.2016-06.lustre:node1
+### login target 1
+sudo iscsiadm --mode node --targetname iqn.2016-06.lustre:node1 --portal 127.0.0.1:3260 --login
+Logging in to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] (multiple)
+Login to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+###### Initiators  setup DONE!
+PFE: probing VIRTUAL-DISK ...
+Found [/dev/sdc]!
+model matched: [VIRTUAL-DISK    ]
+Safe to use this iscsi device! 
+brw-rw---- 1 root disk 8, 32 Jul  7 15:39 /dev/sdc
+sudo  chmod o+rw /dev/sdc
+brw-rw-rw- 1 root disk 8, 32 Jul  7 15:39 /dev/sdc
+
+### [initiator] mount -o noatime /dev/sdc /home/rameshwar/pfe_mnt
+ls -lsit /home/rameshwar/pfe_mnt
+total 12
+11 12 drwx------ 2 root root 12288 Jun 28 23:45 lost+found
+
+### DO FS WKLD (w/ tgtd recording)
+/home/rameshwar/localfsck/app-fswkld.sh
+10+0 records in
+10+0 records out
+40960 bytes (41 kB) copied, 0.000150421 s, 272 MB/s
+/home/rameshwar/localfsck/app-fswkld.sh: line 19: warning: here-document at line 10 delimited by end-of-file (wanted `COMMENT1')
+dirname: missing operand
+Try 'dirname --help' for more information.
+### FS WKLD DONE
+
+ls /home/rameshwar/pfe_mnt
+total 52
+12 40 -rw-r--r-- 1 root root 40960 Jul  7 15:40 test.ext4.node1
+11 12 drwx------ 2 root root 12288 Jun 28 23:45 lost+found
+### [initiator] umount /dev/sdc
+ls -lsit /home/rameshwar/pfe_mnt
+total 0
+### [target] save io logs
+
+################ SPLIT FSWKLD IO
+Thu Jul  7 15:40:11 MDT 2016
+
+### cp img for splitting IO
+
+### replay for splitting IO
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /home/rameshwar/pfe_images/img.128M.empty.ext4.tmp
+PTE:Replay: io_header_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 10000000000
+PTE:Replay: split_io = 1
+PFE: total # of IO in log: 13 
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 23
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 23
+od /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld to /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld.od
+Thu Jul  7 15:40:14 MDT 2016
+od /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld to /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld.od
+######### Kill iSCSI Target
+### check tgtd before killing it
+root     15036  1903  0 15:39 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     15038 15036  0 15:39 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     15235 15233  0 15:40 pts/25   00:00:00 grep -i tgt
+### kill tgtd 
+### check tgtd gone
+root     15240 15233  0 15:40 pts/25   00:00:00 grep -i tgt
+
+################ STAGE #1 DONE!
+
+
+################################################################
+### STAGE #2 : REPLAY & CUT FSWKLD,  DO FSCK1
+################################################################
+Thu Jul  7 15:40:17 MDT 2016
+
+TOT_IO_CNT = 23
+CUT_OPTION == EXHAUSTIVE 
+CUT_START_IO == 23
+CUT_STOP_IO == 1
+
+#============================================ CUT AT FSWKLD IO# 23
+Thu Jul  7 15:40:17 MDT 2016
+### REPLAY FSWKLD TO #IO 23
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 23
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 23
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 23
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:17 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 12/32768 files (0.0% non-contiguous), 9827/131072 blocks
+Thu Jul  7 15:40:17 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 22
+Thu Jul  7 15:40:17 MDT 2016
+### REPLAY FSWKLD TO #IO 22
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 22
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 22
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 22
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:17 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? no
+
+Free inodes count wrong (32757, counted=32756).
+Fix? no
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:17 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 21
+Thu Jul  7 15:40:17 MDT 2016
+### REPLAY FSWKLD TO #IO 21
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 21
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 21
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 21
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? no
+
+Free inodes count wrong (32757, counted=32756).
+Fix? no
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 20
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 20
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 20
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 20
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 20
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? no
+
+Free inodes count wrong (32757, counted=32756).
+Fix? no
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 19
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 19
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 19
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 19
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 19
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Unattached inode 12
+Connect to /lost+found? no
+
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? no
+
+Free inodes count wrong (32757, counted=32756).
+Fix? no
+
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: ********** WARNING: Filesystem still has errors **********
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 18
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 18
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 18
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 18
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 18
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Block bitmap differences:  -(8451--8490)
+Fix? no
+
+Free blocks count wrong (121285, counted=121245).
+Fix? no
+
+Inode bitmap differences:  -12
+Fix? no
+
+Free inodes count wrong (32757, counted=32756).
+Fix? no
+
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: ********** WARNING: Filesystem still has errors **********
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 17
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 17
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 17
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 17
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 17
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Block bitmap differences:  +(8193--8450)
+Fix? no
+
+Free blocks count wrong for group #1 (7894, counted=8192).
+Fix? no
+
+Free blocks count wrong (121285, counted=121543).
+Fix? no
+
+Inode bitmap differences:  -12
+Fix? no
+
+Free inodes count wrong (32757, counted=32756).
+Fix? no
+
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: ********** WARNING: Filesystem still has errors **********
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 16
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 16
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 16
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 16
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 16
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Block bitmap differences:  +(8193--8450)
+Fix? no
+
+Free blocks count wrong for group #1 (7894, counted=8192).
+Fix? no
+
+Free blocks count wrong (121285, counted=121543).
+Fix? no
+
+Free inodes count wrong for group #0 (2036, counted=2037).
+Fix? no
+
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: ********** WARNING: Filesystem still has errors **********
+
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 15
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 15
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 15
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 15
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 15
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 14
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 14
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 14
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 14
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 14
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 13
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 13
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 13
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 13
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 13
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 12
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 12
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 12
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 12
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 12
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 11
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 11
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 11
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 11
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 11
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 10
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 10
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 10
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 10
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 10
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 9
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 9
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 9
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 9
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 9
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 8
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 8
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 8
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 8
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 8
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 7
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 7
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 7
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 7
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 7
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 6
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 6
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 6
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 6
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 6
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 5
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 5
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 5
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 5
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 5
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 4
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 4
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 4
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 4
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 4
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 3
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 3
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 3
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 3
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 3
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 2
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 2
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 2
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 2
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 2
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+
+#============================================ CUT AT FSWKLD IO# 1
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 1
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 1
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 1
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 1
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (w/o recording)
+/home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-n.sh
+Thu Jul  7 15:40:18 MDT 2016
+### sudo e2fsck -fn /dev/shm/img.128M.empty.ext4.fswkld-fault
+e2fsck 1.42.9 (4-Feb-2014)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/shm/img.128M.empty.ext4.fswkld-fault: 11/32768 files (0.0% non-contiguous), 9787/131072 blocks
+Thu Jul  7 15:40:18 MDT 2016
+### FSCK1 DONE
+
+Thu Jul  7 15:40:18 MDT 2016
+Total # of fswkld cuts = 23
+
+################ STAGE #2 DONE!
+
+
+Executing generate_ranked_io.sh
+Log Directory: /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944
+Total replayed IOs: 
+Creating /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/ranked_io.txt
+Done
+
+################################################################
+### STAGE #3: REPLAY & CUT FSWKLD,  RUN & RECORD FSCK1
+################################################################
+Thu Jul  7 15:40:18 MDT 2016
+
+TOT_IO_CNT = 23
+RANKED_IO_FILE = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/ranked_io.txt
+TOT_IO_CNT = 23
+17
+
+#============================================ CUT AT FSWKLD IO# 17
+Thu Jul  7 15:40:18 MDT 2016
+### REPLAY FSWKLD TO #IO 17
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 17
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 17
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 17
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (tgtd recording)
+### Setup iscsi target & initiator
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+Thu Jul  7 15:40:19 MDT 2016
+###### SETUP iSCSI TARGET
+### check tgtd started
+tgtd exists.
+Thu Jul  7 15:40:19 MDT 2016
+### define & create an iscsi target name
+### add /dev/shm/img.128M.empty.ext4.fswkld-fault as backing store
+### enable the target to accept any initiator
+### view the target created
+Target 1: iqn.2016-06.lustre:node1
+    System information:
+        Driver: iscsi
+        State: ready
+    I_T nexus information:
+    LUN information:
+        LUN: 0
+            Type: controller
+            SCSI ID: IET     00010000
+            SCSI SN: beaf10
+            Size: 0 MB, Block size: 1
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: null
+            Backing store path: None
+            Backing store flags: 
+        LUN: 1
+            Type: disk
+            SCSI ID: IET     00010001
+            SCSI SN: beaf11
+            Size: 134 MB, Block size: 512
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: rdwr
+            Backing store path: /dev/shm/img.128M.empty.ext4.fswkld-fault
+            Backing store flags: 
+    Account information:
+    ACL information:
+        ALL
+
+check port 3260
+tcp        0      0 0.0.0.0:3260            0.0.0.0:*               LISTEN      15572/tgtd      
+tcp6       0      0 :::3260                 :::*                    LISTEN      15572/tgtd      
+
+####### TARGET SETUP DONE!
+######### Setup iSCSI Initiators
+### restart iscsi
+ * Unmounting iscsi-backed filesystems
+   ...done.
+ * Disconnecting iSCSI targets
+Logging out of session [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260]
+Logout of [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+   ...done.
+ * Stopping iSCSI initiator service
+   ...done.
+ * Starting iSCSI initiator service iscsid
+   ...done.
+ * Setting up iSCSI targets
+
+iscsiadm: No records found
+   ...done.
+ * Mounting network filesystems
+   ...done.
+### discover target
+sudo iscsiadm --mode discovery --type sendtargets --portal 127.0.0.1
+127.0.0.1:3260,1 iqn.2016-06.lustre:node1
+### login target 1
+sudo iscsiadm --mode node --targetname iqn.2016-06.lustre:node1 --portal 127.0.0.1:3260 --login
+Logging in to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] (multiple)
+Login to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+###### Initiators  setup DONE!
+### run /home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-y.sh on /dev/sdc
+### sudo e2fsck -fy /dev/sdc
+e2fsck 1.42.9 (4-Feb-2014)
+/dev/sdc: recovering journal
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? yes
+
+Free inodes count wrong (32757, counted=32756).
+Fix? yes
+
+
+/dev/sdc: ***** FILE SYSTEM WAS MODIFIED *****
+/dev/sdc: 12/32768 files (0.0% non-contiguous), 9827/131072 blocks
+### save io logs
+
+################ SPLIT FSCK1 IO
+Thu Jul  7 15:40:23 MDT 2016
+
+### cp img for splitting IO
+
+### replay for splitting IO
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /home/rameshwar/pfe_images/img.128M.empty.ext4.tmp
+PTE:Replay: io_header_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld-17.fsck1
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld-17.fsck1
+PTE:Replay: io_header_split_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-17.fsck1
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 10000000000
+PTE:Replay: split_io = 1
+PFE: ERROR in opening /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-17.fsck1 !!!
+Thu Jul  7 15:40:26 MDT 2016
+######### Kill iSCSI Target
+### check tgtd before killing it
+root     15572  1903  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     15573 15572  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     15731 15729  0 15:40 pts/25   00:00:00 grep -i tgt
+### kill tgtd 
+### check tgtd gone
+root     15736 15729  0 15:40 pts/25   00:00:00 grep -i tgt
+### FSCK1 RECORDING DONE
+
+18
+
+#============================================ CUT AT FSWKLD IO# 18
+Thu Jul  7 15:40:27 MDT 2016
+### REPLAY FSWKLD TO #IO 18
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 18
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 18
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 18
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (tgtd recording)
+### Setup iscsi target & initiator
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+Thu Jul  7 15:40:28 MDT 2016
+###### SETUP iSCSI TARGET
+### check tgtd started
+tgtd exists.
+Thu Jul  7 15:40:28 MDT 2016
+### define & create an iscsi target name
+### add /dev/shm/img.128M.empty.ext4.fswkld-fault as backing store
+### enable the target to accept any initiator
+### view the target created
+Target 1: iqn.2016-06.lustre:node1
+    System information:
+        Driver: iscsi
+        State: ready
+    I_T nexus information:
+    LUN information:
+        LUN: 0
+            Type: controller
+            SCSI ID: IET     00010000
+            SCSI SN: beaf10
+            Size: 0 MB, Block size: 1
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: null
+            Backing store path: None
+            Backing store flags: 
+        LUN: 1
+            Type: disk
+            SCSI ID: IET     00010001
+            SCSI SN: beaf11
+            Size: 134 MB, Block size: 512
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: rdwr
+            Backing store path: /dev/shm/img.128M.empty.ext4.fswkld-fault
+            Backing store flags: 
+    Account information:
+    ACL information:
+        ALL
+
+check port 3260
+tcp        0      0 0.0.0.0:3260            0.0.0.0:*               LISTEN      15747/tgtd      
+tcp6       0      0 :::3260                 :::*                    LISTEN      15747/tgtd      
+
+####### TARGET SETUP DONE!
+######### Setup iSCSI Initiators
+### restart iscsi
+ * Unmounting iscsi-backed filesystems
+   ...done.
+ * Disconnecting iSCSI targets
+Logging out of session [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260]
+Logout of [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+   ...done.
+ * Stopping iSCSI initiator service
+   ...done.
+ * Starting iSCSI initiator service iscsid
+   ...done.
+ * Setting up iSCSI targets
+
+iscsiadm: No records found
+   ...done.
+ * Mounting network filesystems
+   ...done.
+### discover target
+sudo iscsiadm --mode discovery --type sendtargets --portal 127.0.0.1
+127.0.0.1:3260,1 iqn.2016-06.lustre:node1
+### login target 1
+sudo iscsiadm --mode node --targetname iqn.2016-06.lustre:node1 --portal 127.0.0.1:3260 --login
+Logging in to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] (multiple)
+Login to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+###### Initiators  setup DONE!
+### run /home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-y.sh on /dev/sdc
+### sudo e2fsck -fy /dev/sdc
+e2fsck 1.42.9 (4-Feb-2014)
+/dev/sdc: recovering journal
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? yes
+
+Free inodes count wrong (32757, counted=32756).
+Fix? yes
+
+
+/dev/sdc: ***** FILE SYSTEM WAS MODIFIED *****
+/dev/sdc: 12/32768 files (0.0% non-contiguous), 9827/131072 blocks
+### save io logs
+
+################ SPLIT FSCK1 IO
+Thu Jul  7 15:40:32 MDT 2016
+
+### cp img for splitting IO
+
+### replay for splitting IO
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /home/rameshwar/pfe_images/img.128M.empty.ext4.tmp
+PTE:Replay: io_header_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld-18.fsck1
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld-18.fsck1
+PTE:Replay: io_header_split_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-18.fsck1
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 10000000000
+PTE:Replay: split_io = 1
+PFE: ERROR in opening /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-18.fsck1 !!!
+Thu Jul  7 15:40:35 MDT 2016
+######### Kill iSCSI Target
+### check tgtd before killing it
+root     15747  1903  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     15748 15747  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     15903 15901  0 15:40 pts/25   00:00:00 grep -i tgt
+### kill tgtd 
+### check tgtd gone
+root     15908 15901  0 15:40 pts/25   00:00:00 grep -i tgt
+### FSCK1 RECORDING DONE
+
+16
+
+#============================================ CUT AT FSWKLD IO# 16
+Thu Jul  7 15:40:36 MDT 2016
+### REPLAY FSWKLD TO #IO 16
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 16
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 16
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 16
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (tgtd recording)
+### Setup iscsi target & initiator
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+Thu Jul  7 15:40:37 MDT 2016
+###### SETUP iSCSI TARGET
+### check tgtd started
+tgtd exists.
+Thu Jul  7 15:40:37 MDT 2016
+### define & create an iscsi target name
+### add /dev/shm/img.128M.empty.ext4.fswkld-fault as backing store
+### enable the target to accept any initiator
+### view the target created
+Target 1: iqn.2016-06.lustre:node1
+    System information:
+        Driver: iscsi
+        State: ready
+    I_T nexus information:
+    LUN information:
+        LUN: 0
+            Type: controller
+            SCSI ID: IET     00010000
+            SCSI SN: beaf10
+            Size: 0 MB, Block size: 1
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: null
+            Backing store path: None
+            Backing store flags: 
+        LUN: 1
+            Type: disk
+            SCSI ID: IET     00010001
+            SCSI SN: beaf11
+            Size: 134 MB, Block size: 512
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: rdwr
+            Backing store path: /dev/shm/img.128M.empty.ext4.fswkld-fault
+            Backing store flags: 
+    Account information:
+    ACL information:
+        ALL
+
+check port 3260
+tcp        0      0 0.0.0.0:3260            0.0.0.0:*               LISTEN      15919/tgtd      
+tcp6       0      0 :::3260                 :::*                    LISTEN      15919/tgtd      
+
+####### TARGET SETUP DONE!
+######### Setup iSCSI Initiators
+### restart iscsi
+ * Unmounting iscsi-backed filesystems
+   ...done.
+ * Disconnecting iSCSI targets
+Logging out of session [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260]
+Logout of [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+   ...done.
+ * Stopping iSCSI initiator service
+   ...done.
+ * Starting iSCSI initiator service iscsid
+   ...done.
+ * Setting up iSCSI targets
+
+iscsiadm: No records found
+   ...done.
+ * Mounting network filesystems
+   ...done.
+### discover target
+sudo iscsiadm --mode discovery --type sendtargets --portal 127.0.0.1
+127.0.0.1:3260,1 iqn.2016-06.lustre:node1
+### login target 1
+sudo iscsiadm --mode node --targetname iqn.2016-06.lustre:node1 --portal 127.0.0.1:3260 --login
+Logging in to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] (multiple)
+Login to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+###### Initiators  setup DONE!
+### run /home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-y.sh on /dev/sdc
+### sudo e2fsck -fy /dev/sdc
+e2fsck 1.42.9 (4-Feb-2014)
+/dev/sdc: recovering journal
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? yes
+
+Free inodes count wrong (32757, counted=32756).
+Fix? yes
+
+
+/dev/sdc: ***** FILE SYSTEM WAS MODIFIED *****
+/dev/sdc: 12/32768 files (0.0% non-contiguous), 9827/131072 blocks
+### save io logs
+
+################ SPLIT FSCK1 IO
+Thu Jul  7 15:40:41 MDT 2016
+
+### cp img for splitting IO
+
+### replay for splitting IO
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /home/rameshwar/pfe_images/img.128M.empty.ext4.tmp
+PTE:Replay: io_header_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld-16.fsck1
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld-16.fsck1
+PTE:Replay: io_header_split_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-16.fsck1
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 10000000000
+PTE:Replay: split_io = 1
+PFE: ERROR in opening /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-16.fsck1 !!!
+Thu Jul  7 15:40:44 MDT 2016
+######### Kill iSCSI Target
+### check tgtd before killing it
+root     15919  1903  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     15920 15919  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     16074 16072  0 15:40 pts/25   00:00:00 grep -i tgt
+### kill tgtd 
+### check tgtd gone
+root     16079 16072  0 15:40 pts/25   00:00:00 grep -i tgt
+### FSCK1 RECORDING DONE
+
+22
+
+#============================================ CUT AT FSWKLD IO# 22
+Thu Jul  7 15:40:45 MDT 2016
+### REPLAY FSWKLD TO #IO 22
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 22
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 22
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 22
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (tgtd recording)
+### Setup iscsi target & initiator
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+Thu Jul  7 15:40:46 MDT 2016
+###### SETUP iSCSI TARGET
+### check tgtd started
+tgtd exists.
+Thu Jul  7 15:40:46 MDT 2016
+### define & create an iscsi target name
+### add /dev/shm/img.128M.empty.ext4.fswkld-fault as backing store
+### enable the target to accept any initiator
+### view the target created
+Target 1: iqn.2016-06.lustre:node1
+    System information:
+        Driver: iscsi
+        State: ready
+    I_T nexus information:
+    LUN information:
+        LUN: 0
+            Type: controller
+            SCSI ID: IET     00010000
+            SCSI SN: beaf10
+            Size: 0 MB, Block size: 1
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: null
+            Backing store path: None
+            Backing store flags: 
+        LUN: 1
+            Type: disk
+            SCSI ID: IET     00010001
+            SCSI SN: beaf11
+            Size: 134 MB, Block size: 512
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: rdwr
+            Backing store path: /dev/shm/img.128M.empty.ext4.fswkld-fault
+            Backing store flags: 
+    Account information:
+    ACL information:
+        ALL
+
+check port 3260
+tcp        0      0 0.0.0.0:3260            0.0.0.0:*               LISTEN      16090/tgtd      
+tcp6       0      0 :::3260                 :::*                    LISTEN      16090/tgtd      
+
+####### TARGET SETUP DONE!
+######### Setup iSCSI Initiators
+### restart iscsi
+ * Unmounting iscsi-backed filesystems
+   ...done.
+ * Disconnecting iSCSI targets
+Logging out of session [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260]
+Logout of [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+   ...done.
+ * Stopping iSCSI initiator service
+   ...done.
+ * Starting iSCSI initiator service iscsid
+   ...done.
+ * Setting up iSCSI targets
+
+iscsiadm: No records found
+   ...done.
+ * Mounting network filesystems
+   ...done.
+### discover target
+sudo iscsiadm --mode discovery --type sendtargets --portal 127.0.0.1
+127.0.0.1:3260,1 iqn.2016-06.lustre:node1
+### login target 1
+sudo iscsiadm --mode node --targetname iqn.2016-06.lustre:node1 --portal 127.0.0.1:3260 --login
+Logging in to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] (multiple)
+Login to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+###### Initiators  setup DONE!
+### run /home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-y.sh on /dev/sdc
+### sudo e2fsck -fy /dev/sdc
+e2fsck 1.42.9 (4-Feb-2014)
+/dev/sdc: recovering journal
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? yes
+
+Free inodes count wrong (32757, counted=32756).
+Fix? yes
+
+
+/dev/sdc: ***** FILE SYSTEM WAS MODIFIED *****
+/dev/sdc: 12/32768 files (0.0% non-contiguous), 9827/131072 blocks
+### save io logs
+
+################ SPLIT FSCK1 IO
+Thu Jul  7 15:40:50 MDT 2016
+
+### cp img for splitting IO
+
+### replay for splitting IO
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /home/rameshwar/pfe_images/img.128M.empty.ext4.tmp
+PTE:Replay: io_header_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld-22.fsck1
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld-22.fsck1
+PTE:Replay: io_header_split_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-22.fsck1
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 10000000000
+PTE:Replay: split_io = 1
+PFE: ERROR in opening /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-22.fsck1 !!!
+Thu Jul  7 15:40:52 MDT 2016
+######### Kill iSCSI Target
+### check tgtd before killing it
+root     16090  1903  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     16091 16090  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     16246 16244  0 15:40 pts/25   00:00:00 grep -i tgt
+### kill tgtd 
+### check tgtd gone
+root     16251 16244  0 15:40 pts/25   00:00:00 grep -i tgt
+### FSCK1 RECORDING DONE
+
+21
+
+#============================================ CUT AT FSWKLD IO# 21
+Thu Jul  7 15:40:53 MDT 2016
+### REPLAY FSWKLD TO #IO 21
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 21
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 21
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 21
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (tgtd recording)
+### Setup iscsi target & initiator
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+Thu Jul  7 15:40:54 MDT 2016
+###### SETUP iSCSI TARGET
+### check tgtd started
+tgtd exists.
+Thu Jul  7 15:40:55 MDT 2016
+### define & create an iscsi target name
+### add /dev/shm/img.128M.empty.ext4.fswkld-fault as backing store
+### enable the target to accept any initiator
+### view the target created
+Target 1: iqn.2016-06.lustre:node1
+    System information:
+        Driver: iscsi
+        State: ready
+    I_T nexus information:
+    LUN information:
+        LUN: 0
+            Type: controller
+            SCSI ID: IET     00010000
+            SCSI SN: beaf10
+            Size: 0 MB, Block size: 1
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: null
+            Backing store path: None
+            Backing store flags: 
+        LUN: 1
+            Type: disk
+            SCSI ID: IET     00010001
+            SCSI SN: beaf11
+            Size: 134 MB, Block size: 512
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: rdwr
+            Backing store path: /dev/shm/img.128M.empty.ext4.fswkld-fault
+            Backing store flags: 
+    Account information:
+    ACL information:
+        ALL
+
+check port 3260
+tcp        0      0 0.0.0.0:3260            0.0.0.0:*               LISTEN      16262/tgtd      
+tcp6       0      0 :::3260                 :::*                    LISTEN      16262/tgtd      
+
+####### TARGET SETUP DONE!
+######### Setup iSCSI Initiators
+### restart iscsi
+ * Unmounting iscsi-backed filesystems
+   ...done.
+ * Disconnecting iSCSI targets
+Logging out of session [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260]
+Logout of [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+   ...done.
+ * Stopping iSCSI initiator service
+   ...done.
+ * Starting iSCSI initiator service iscsid
+   ...done.
+ * Setting up iSCSI targets
+
+iscsiadm: No records found
+   ...done.
+ * Mounting network filesystems
+   ...done.
+### discover target
+sudo iscsiadm --mode discovery --type sendtargets --portal 127.0.0.1
+127.0.0.1:3260,1 iqn.2016-06.lustre:node1
+### login target 1
+sudo iscsiadm --mode node --targetname iqn.2016-06.lustre:node1 --portal 127.0.0.1:3260 --login
+Logging in to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] (multiple)
+Login to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+###### Initiators  setup DONE!
+### run /home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-y.sh on /dev/sdc
+### sudo e2fsck -fy /dev/sdc
+e2fsck 1.42.9 (4-Feb-2014)
+/dev/sdc: recovering journal
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? yes
+
+Free inodes count wrong (32757, counted=32756).
+Fix? yes
+
+
+/dev/sdc: ***** FILE SYSTEM WAS MODIFIED *****
+/dev/sdc: 12/32768 files (0.0% non-contiguous), 9827/131072 blocks
+### save io logs
+
+################ SPLIT FSCK1 IO
+Thu Jul  7 15:40:59 MDT 2016
+
+### cp img for splitting IO
+
+### replay for splitting IO
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /home/rameshwar/pfe_images/img.128M.empty.ext4.tmp
+PTE:Replay: io_header_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld-21.fsck1
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld-21.fsck1
+PTE:Replay: io_header_split_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-21.fsck1
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 10000000000
+PTE:Replay: split_io = 1
+PFE: ERROR in opening /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-21.fsck1 !!!
+Thu Jul  7 15:41:01 MDT 2016
+######### Kill iSCSI Target
+### check tgtd before killing it
+root     16262  1903  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     16263 16262  0 15:40 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     16418 16416  0 15:41 pts/25   00:00:00 grep -i tgt
+### kill tgtd 
+### check tgtd gone
+root     16423 16416  0 15:41 pts/25   00:00:00 grep -i tgt
+### FSCK1 RECORDING DONE
+
+20
+
+#============================================ CUT AT FSWKLD IO# 20
+Thu Jul  7 15:41:02 MDT 2016
+### REPLAY FSWKLD TO #IO 20
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 20
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 20
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 20
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (tgtd recording)
+### Setup iscsi target & initiator
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+Thu Jul  7 15:41:03 MDT 2016
+###### SETUP iSCSI TARGET
+### check tgtd started
+tgtd exists.
+Thu Jul  7 15:41:03 MDT 2016
+### define & create an iscsi target name
+### add /dev/shm/img.128M.empty.ext4.fswkld-fault as backing store
+### enable the target to accept any initiator
+### view the target created
+Target 1: iqn.2016-06.lustre:node1
+    System information:
+        Driver: iscsi
+        State: ready
+    I_T nexus information:
+    LUN information:
+        LUN: 0
+            Type: controller
+            SCSI ID: IET     00010000
+            SCSI SN: beaf10
+            Size: 0 MB, Block size: 1
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: null
+            Backing store path: None
+            Backing store flags: 
+        LUN: 1
+            Type: disk
+            SCSI ID: IET     00010001
+            SCSI SN: beaf11
+            Size: 134 MB, Block size: 512
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: rdwr
+            Backing store path: /dev/shm/img.128M.empty.ext4.fswkld-fault
+            Backing store flags: 
+    Account information:
+    ACL information:
+        ALL
+
+check port 3260
+tcp        0      0 0.0.0.0:3260            0.0.0.0:*               LISTEN      16434/tgtd      
+tcp6       0      0 :::3260                 :::*                    LISTEN      16434/tgtd      
+
+####### TARGET SETUP DONE!
+######### Setup iSCSI Initiators
+### restart iscsi
+ * Unmounting iscsi-backed filesystems
+   ...done.
+ * Disconnecting iSCSI targets
+Logging out of session [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260]
+Logout of [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+   ...done.
+ * Stopping iSCSI initiator service
+   ...done.
+ * Starting iSCSI initiator service iscsid
+   ...done.
+ * Setting up iSCSI targets
+
+iscsiadm: No records found
+   ...done.
+ * Mounting network filesystems
+   ...done.
+### discover target
+sudo iscsiadm --mode discovery --type sendtargets --portal 127.0.0.1
+127.0.0.1:3260,1 iqn.2016-06.lustre:node1
+### login target 1
+sudo iscsiadm --mode node --targetname iqn.2016-06.lustre:node1 --portal 127.0.0.1:3260 --login
+Logging in to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] (multiple)
+Login to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+###### Initiators  setup DONE!
+### run /home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-y.sh on /dev/sdc
+### sudo e2fsck -fy /dev/sdc
+e2fsck 1.42.9 (4-Feb-2014)
+/dev/sdc: recovering journal
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? yes
+
+Free inodes count wrong (32757, counted=32756).
+Fix? yes
+
+
+/dev/sdc: ***** FILE SYSTEM WAS MODIFIED *****
+/dev/sdc: 12/32768 files (0.0% non-contiguous), 9827/131072 blocks
+### save io logs
+
+################ SPLIT FSCK1 IO
+Thu Jul  7 15:41:08 MDT 2016
+
+### cp img for splitting IO
+
+### replay for splitting IO
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /home/rameshwar/pfe_images/img.128M.empty.ext4.tmp
+PTE:Replay: io_header_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld-20.fsck1
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld-20.fsck1
+PTE:Replay: io_header_split_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-20.fsck1
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 10000000000
+PTE:Replay: split_io = 1
+PFE: ERROR in opening /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-20.fsck1 !!!
+Thu Jul  7 15:41:10 MDT 2016
+######### Kill iSCSI Target
+### check tgtd before killing it
+root     16434  1903  0 15:41 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     16435 16434  0 15:41 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     16589 16587  0 15:41 pts/25   00:00:00 grep -i tgt
+### kill tgtd 
+### check tgtd gone
+root     16594 16587  0 15:41 pts/25   00:00:00 grep -i tgt
+### FSCK1 RECORDING DONE
+
+19
+
+#============================================ CUT AT FSWKLD IO# 19
+Thu Jul  7 15:41:11 MDT 2016
+### REPLAY FSWKLD TO #IO 19
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 19
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 19
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 19
+### REPLAY FSWKLD DONE
+
+### DO FSCK1 (tgtd recording)
+### Setup iscsi target & initiator
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+Thu Jul  7 15:41:12 MDT 2016
+###### SETUP iSCSI TARGET
+### check tgtd started
+tgtd exists.
+Thu Jul  7 15:41:12 MDT 2016
+### define & create an iscsi target name
+### add /dev/shm/img.128M.empty.ext4.fswkld-fault as backing store
+### enable the target to accept any initiator
+### view the target created
+Target 1: iqn.2016-06.lustre:node1
+    System information:
+        Driver: iscsi
+        State: ready
+    I_T nexus information:
+    LUN information:
+        LUN: 0
+            Type: controller
+            SCSI ID: IET     00010000
+            SCSI SN: beaf10
+            Size: 0 MB, Block size: 1
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: null
+            Backing store path: None
+            Backing store flags: 
+        LUN: 1
+            Type: disk
+            SCSI ID: IET     00010001
+            SCSI SN: beaf11
+            Size: 134 MB, Block size: 512
+            Online: Yes
+            Removable media: No
+            Prevent removal: No
+            Readonly: No
+            Thin-provisioning: No
+            Backing store type: rdwr
+            Backing store path: /dev/shm/img.128M.empty.ext4.fswkld-fault
+            Backing store flags: 
+    Account information:
+    ACL information:
+        ALL
+
+check port 3260
+tcp        0      0 0.0.0.0:3260            0.0.0.0:*               LISTEN      16605/tgtd      
+tcp6       0      0 :::3260                 :::*                    LISTEN      16605/tgtd      
+
+####### TARGET SETUP DONE!
+######### Setup iSCSI Initiators
+### restart iscsi
+ * Unmounting iscsi-backed filesystems
+   ...done.
+ * Disconnecting iSCSI targets
+Logging out of session [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260]
+Logout of [sid: 1, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+   ...done.
+ * Stopping iSCSI initiator service
+   ...done.
+ * Starting iSCSI initiator service iscsid
+   ...done.
+ * Setting up iSCSI targets
+
+iscsiadm: No records found
+   ...done.
+ * Mounting network filesystems
+   ...done.
+### discover target
+sudo iscsiadm --mode discovery --type sendtargets --portal 127.0.0.1
+127.0.0.1:3260,1 iqn.2016-06.lustre:node1
+### login target 1
+sudo iscsiadm --mode node --targetname iqn.2016-06.lustre:node1 --portal 127.0.0.1:3260 --login
+Logging in to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] (multiple)
+Login to [iface: default, target: iqn.2016-06.lustre:node1, portal: 127.0.0.1,3260] successful.
+###### Initiators  setup DONE!
+### run /home/rameshwar/assignment/grad_project/copy_scsi_tool/pfe_scripts/localfsck/app-fsck1-y.sh on /dev/sdc
+### sudo e2fsck -fy /dev/sdc
+e2fsck 1.42.9 (4-Feb-2014)
+/dev/sdc: recovering journal
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong (121285, counted=121245).
+Fix? yes
+
+Free inodes count wrong (32757, counted=32756).
+Fix? yes
+
+
+/dev/sdc: ***** FILE SYSTEM WAS MODIFIED *****
+/dev/sdc: 12/32768 files (0.0% non-contiguous), 9827/131072 blocks
+### save io logs
+
+################ SPLIT FSCK1 IO
+Thu Jul  7 15:41:16 MDT 2016
+
+### cp img for splitting IO
+
+### replay for splitting IO
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /home/rameshwar/pfe_images/img.128M.empty.ext4.tmp
+PTE:Replay: io_header_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log.fswkld-19.fsck1
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld-19.fsck1
+PTE:Replay: io_header_split_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-19.fsck1
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 10000000000
+PTE:Replay: split_io = 1
+PFE: ERROR in opening /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_split_log.fswkld-19.fsck1 !!!
+Thu Jul  7 15:41:19 MDT 2016
+######### Kill iSCSI Target
+### check tgtd before killing it
+root     16605  1903  0 15:41 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     16606 16605  0 15:41 ?        00:00:00 /home/rameshwar/assignment/grad_project/copy_scsi_tool/usr/tgtd --pfe-io-header-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_head_log --pfe-fail-type-tgtd 0 --pfe-err-blk /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log --pfe-io-data-log /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log --pfe-enable-record 1
+root     16773 16771  0 15:41 pts/25   00:00:00 grep -i tgt
+### kill tgtd 
+### check tgtd gone
+root     16778 16771  0 15:41 pts/25   00:00:00 grep -i tgt
+### FSCK1 RECORDING DONE
+
+Thu Jul  7 15:41:20 MDT 2016
+Total # of ranked cuts = 7
+
+################ STAGE #3 DONE!
+
+
+################################################################
+### STAGE #4: REPLAY & CUT FSWKLD,  REPLAY & CUT FSCK1, DO FSCK2
+################################################################
+Thu Jul  7 15:41:20 MDT 2016
+
+TOT_IO_CNT = 23
+RANKED_IO_FILE = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/ranked_io.txt
+TOT_IO_CNT = 23
+17
+
+#===================================================== CUT AT FSWKLD IO# 17
+Thu Jul  7 15:41:20 MDT 2016
+### REPLAY FSWKLD TO FSWKLD-IO# 17
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 17
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 17
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 17
+### REPLAY FSWKLD DONE
+FSCK1_TOT_IO_CNT = 
+FSCK1_CUT_START_IO == 
+FSCK1_CUT_STOP_IO == 1
+/home/rameshwar/localfsck/4-run-fsck2.sh: line 69: [: -ge: unary operator expected
+18
+
+#===================================================== CUT AT FSWKLD IO# 18
+Thu Jul  7 15:41:20 MDT 2016
+### REPLAY FSWKLD TO FSWKLD-IO# 18
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 18
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 18
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 18
+### REPLAY FSWKLD DONE
+FSCK1_TOT_IO_CNT = 
+FSCK1_CUT_START_IO == 
+FSCK1_CUT_STOP_IO == 1
+/home/rameshwar/localfsck/4-run-fsck2.sh: line 69: [: -ge: unary operator expected
+16
+
+#===================================================== CUT AT FSWKLD IO# 16
+Thu Jul  7 15:41:20 MDT 2016
+### REPLAY FSWKLD TO FSWKLD-IO# 16
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 16
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 16
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 16
+### REPLAY FSWKLD DONE
+FSCK1_TOT_IO_CNT = 
+FSCK1_CUT_START_IO == 
+FSCK1_CUT_STOP_IO == 1
+/home/rameshwar/localfsck/4-run-fsck2.sh: line 69: [: -ge: unary operator expected
+22
+
+#===================================================== CUT AT FSWKLD IO# 22
+Thu Jul  7 15:41:20 MDT 2016
+### REPLAY FSWKLD TO FSWKLD-IO# 22
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 22
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 22
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 22
+### REPLAY FSWKLD DONE
+FSCK1_TOT_IO_CNT = 
+FSCK1_CUT_START_IO == 
+FSCK1_CUT_STOP_IO == 1
+/home/rameshwar/localfsck/4-run-fsck2.sh: line 69: [: -ge: unary operator expected
+21
+
+#===================================================== CUT AT FSWKLD IO# 21
+Thu Jul  7 15:41:20 MDT 2016
+### REPLAY FSWKLD TO FSWKLD-IO# 21
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 21
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 21
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 21
+### REPLAY FSWKLD DONE
+FSCK1_TOT_IO_CNT = 
+FSCK1_CUT_START_IO == 
+FSCK1_CUT_STOP_IO == 1
+/home/rameshwar/localfsck/4-run-fsck2.sh: line 69: [: -ge: unary operator expected
+20
+
+#===================================================== CUT AT FSWKLD IO# 20
+Thu Jul  7 15:41:20 MDT 2016
+### REPLAY FSWKLD TO FSWKLD-IO# 20
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 20
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 20
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 20
+### REPLAY FSWKLD DONE
+FSCK1_TOT_IO_CNT = 
+FSCK1_CUT_START_IO == 
+FSCK1_CUT_STOP_IO == 1
+/home/rameshwar/localfsck/4-run-fsck2.sh: line 69: [: -ge: unary operator expected
+19
+
+#===================================================== CUT AT FSWKLD IO# 19
+Thu Jul  7 15:41:20 MDT 2016
+### REPLAY FSWKLD TO FSWKLD-IO# 19
+config_pfe_io_block_size:PFE_IO_BLOCK_SIZE doesn't exist,use default value 4096.
+PTE:Replay: disk_file = /dev/shm/img.128M.empty.ext4.fswkld-fault
+PTE:Replay: io_header_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_data_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_io_data_log.fswkld
+PTE:Replay: io_header_split_file = /dev/shm/pfe_io_head_split_log
+PTE:Replay: io_err_blk_file = /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944/pfe_err_block_log
+PTE:Replay: fail_type = 0
+PTE:Replay: start_io from input = 1
+PTE:Replay: end_io from input = 19
+PTE:Replay: split_io = 0
+PFE: total # of IO in log: 23 
+PFE:PFE: REPLAY_w_FAILURE
+PFE: total # of IO recorded = 23
+PFE: start replay from IO#= 1
+PFE: end replay at IO#= 19
+PFE: fail type = 0
+PFE: do simple replay w/o failure.
+PFE: total # of IO in log: 23 
+PFE: total replayed IO # = 19
+### REPLAY FSWKLD DONE
+FSCK1_TOT_IO_CNT = 
+FSCK1_CUT_START_IO == 
+FSCK1_CUT_STOP_IO == 1
+/home/rameshwar/localfsck/4-run-fsck2.sh: line 69: [: -ge: unary operator expected
+Thu Jul  7 15:41:20 MDT 2016
+PFE_LOG_DIR: /home/rameshwar/pfe_logs/logs-fsck-cutopt-EXHAUSTIVE-100.160707153944
+
+################ STAGE #4 DONE!
+

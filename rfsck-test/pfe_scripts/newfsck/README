@@ -1,0 +1,23 @@
+### scripts for testing local fsck ###
+
+
+### generate backing store image
+mkdir ~/pfe_images
+cd ~/pfe_images
+
+dd if=/dev/zero of=img.128M.empty bs=1M count=128
+cp img.128M.empty img.128M.empty.ext4
+mkfs -t ext4 -F img.128M.empty.ext4   
+
+
+### change paths/paramerters in pfe_config.sh based on your local environment
+#vim pfe_config.sh:
+#export PFE_HOME_DIR= #!!!CHANGE TO YOUR PATH TO THE REPOS 
+#export INIT_VIRTUAL_DEV=/dev/sdc #CHANGE TO YOURS!!!
+
+./run.sh
+
+To test a bunch of images at the same time:
+
+1. Edit "image2.txt" and add the paths to the images
+2. Run test-all-images.sh

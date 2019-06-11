@@ -1,0 +1,1087 @@
+FS_INODE: File system stress - inode allocation/deallocation
+Volume under test: ../../../../../test/
+Number of subdirectories: 100
+Number of files: 100
+Number of loops: 100
+Execution begins 
+Tue May 31 14:44:27 MDT 2016
+==============================================
+MULTIPLE PROCESSES CREATING AND DELETING FILES
+==============================================
+./fs_inod: creating dir2 subdirectories
+./fs_inod: mkdir dir10
+./fs_inod: mkdir dir11
+./fs_inod: mkdir dir12
+./fs_inod: mkdir dir13
+./fs_inod: mkdir dir14
+./fs_inod: mkdir dir15
+./fs_inod: mkdir dir16
+./fs_inod: mkdir dir17
+./fs_inod: mkdir dir18
+./fs_inod: mkdir dir19
+./fs_inod: mkdir dir20
+./fs_inod: mkdir dir21
+./fs_inod: mkdir dir22
+./fs_inod: mkdir dir23
+./fs_inod: mkdir dir24
+./fs_inod: mkdir dir25
+./fs_inod: mkdir dir26
+./fs_inod: mkdir dir27
+./fs_inod: mkdir dir28
+./fs_inod: mkdir dir29
+./fs_inod: mkdir dir30
+./fs_inod: mkdir dir31
+./fs_inod: mkdir dir32
+./fs_inod: mkdir dir33
+./fs_inod: mkdir dir34
+./fs_inod: mkdir dir35
+./fs_inod: mkdir dir36
+./fs_inod: mkdir dir37
+./fs_inod: mkdir dir38
+./fs_inod: mkdir dir39
+./fs_inod: mkdir dir40
+./fs_inod: mkdir dir41
+./fs_inod: mkdir dir42
+./fs_inod: mkdir dir43
+./fs_inod: mkdir dir44
+./fs_inod: mkdir dir45
+./fs_inod: mkdir dir46
+./fs_inod: mkdir dir47
+./fs_inod: mkdir dir48
+./fs_inod: mkdir dir49
+./fs_inod: mkdir dir50
+./fs_inod: mkdir dir51
+./fs_inod: mkdir dir52
+./fs_inod: mkdir dir53
+./fs_inod: mkdir dir54
+./fs_inod: mkdir dir55
+./fs_inod: mkdir dir56
+./fs_inod: mkdir dir57
+./fs_inod: mkdir dir58
+./fs_inod: mkdir dir59
+./fs_inod: mkdir dir60
+./fs_inod: mkdir dir61
+./fs_inod: mkdir dir62
+./fs_inod: mkdir dir63
+./fs_inod: mkdir dir64
+./fs_inod: mkdir dir65
+./fs_inod: mkdir dir66
+./fs_inod: mkdir dir67
+./fs_inod: mkdir dir68
+./fs_inod: mkdir dir69
+./fs_inod: mkdir dir70
+./fs_inod: mkdir dir71
+./fs_inod: mkdir dir72
+./fs_inod: mkdir dir73
+./fs_inod: mkdir dir74
+./fs_inod: mkdir dir75
+./fs_inod: mkdir dir76
+./fs_inod: mkdir dir77
+./fs_inod: mkdir dir78
+./fs_inod: mkdir dir79
+./fs_inod: mkdir dir80
+./fs_inod: mkdir dir81
+./fs_inod: mkdir dir82
+./fs_inod: mkdir dir83
+./fs_inod: mkdir dir84
+./fs_inod: mkdir dir85
+./fs_inod: mkdir dir86
+./fs_inod: mkdir dir87
+./fs_inod: mkdir dir88
+./fs_inod: mkdir dir89
+./fs_inod: mkdir dir90
+./fs_inod: mkdir dir91
+./fs_inod: mkdir dir92
+./fs_inod: mkdir dir93
+./fs_inod: mkdir dir94
+./fs_inod: mkdir dir95
+./fs_inod: mkdir dir96
+./fs_inod: mkdir dir97
+./fs_inod: mkdir dir98
+./fs_inod: mkdir dir99
+./fs_inod: creating dir1 subdirectories & files
+./fs_inod: mkdir dir10
+./fs_inod: mkdir dir11
+./fs_inod: mkdir dir12
+./fs_inod: mkdir dir13
+./fs_inod: mkdir dir14
+./fs_inod: mkdir dir15
+./fs_inod: mkdir dir16
+./fs_inod: mkdir dir17
+./fs_inod: mkdir dir18
+./fs_inod: mkdir dir19
+./fs_inod: mkdir dir20
+./fs_inod: mkdir dir21
+./fs_inod: mkdir dir22
+./fs_inod: mkdir dir23
+./fs_inod: mkdir dir24
+./fs_inod: mkdir dir25
+./fs_inod: mkdir dir26
+./fs_inod: mkdir dir27
+./fs_inod: mkdir dir28
+./fs_inod: mkdir dir29
+./fs_inod: mkdir dir30
+./fs_inod: mkdir dir31
+./fs_inod: mkdir dir32
+./fs_inod: mkdir dir33
+./fs_inod: mkdir dir34
+./fs_inod: mkdir dir35
+./fs_inod: mkdir dir36
+./fs_inod: mkdir dir37
+./fs_inod: mkdir dir38
+./fs_inod: mkdir dir39
+./fs_inod: mkdir dir40
+./fs_inod: mkdir dir41
+./fs_inod: mkdir dir42
+./fs_inod: mkdir dir43
+./fs_inod: mkdir dir44
+./fs_inod: mkdir dir45
+./fs_inod: mkdir dir46
+./fs_inod: mkdir dir47
+./fs_inod: mkdir dir48
+./fs_inod: mkdir dir49
+./fs_inod: mkdir dir50
+./fs_inod: mkdir dir51
+./fs_inod: mkdir dir52
+./fs_inod: mkdir dir53
+./fs_inod: mkdir dir54
+./fs_inod: mkdir dir55
+./fs_inod: mkdir dir56
+./fs_inod: mkdir dir57
+./fs_inod: mkdir dir58
+./fs_inod: mkdir dir59
+./fs_inod: mkdir dir60
+./fs_inod: mkdir dir61
+./fs_inod: mkdir dir62
+./fs_inod: mkdir dir63
+./fs_inod: mkdir dir64
+./fs_inod: mkdir dir65
+./fs_inod: mkdir dir66
+./fs_inod: mkdir dir67
+./fs_inod: mkdir dir68
+./fs_inod: mkdir dir69
+./fs_inod: mkdir dir70
+./fs_inod: mkdir dir71
+./fs_inod: mkdir dir72
+./fs_inod: mkdir dir73
+./fs_inod: mkdir dir74
+./fs_inod: mkdir dir75
+./fs_inod: mkdir dir76
+./fs_inod: mkdir dir77
+./fs_inod: mkdir dir78
+./fs_inod: mkdir dir79
+./fs_inod: mkdir dir80
+./fs_inod: mkdir dir81
+./fs_inod: mkdir dir82
+./fs_inod: mkdir dir83
+./fs_inod: mkdir dir84
+./fs_inod: mkdir dir85
+./fs_inod: mkdir dir86
+./fs_inod: mkdir dir87
+./fs_inod: mkdir dir88
+./fs_inod: mkdir dir89
+./fs_inod: mkdir dir90
+./fs_inod: mkdir dir91
+./fs_inod: mkdir dir92
+./fs_inod: mkdir dir93
+./fs_inod: mkdir dir94
+./fs_inod: mkdir dir95
+./fs_inod: mkdir dir96
+./fs_inod: mkdir dir97
+./fs_inod: mkdir dir98
+./fs_inod: mkdir dir99
+Executing loop 1 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 2 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 3 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 4 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 5 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 6 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 7 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 8 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 9 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 10 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 11 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 12 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 13 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 14 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 15 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 16 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 17 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 18 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 19 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 20 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 21 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 22 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 23 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 24 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 25 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 26 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 27 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 28 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 29 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 30 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 31 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 32 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 33 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 34 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 35 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 36 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 37 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 38 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 39 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 40 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 41 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 42 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 43 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 44 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 45 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 46 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 47 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 48 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 49 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 50 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 51 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 52 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 53 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 54 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 55 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: rm files [0-100]/./fs_inod: cd ../dir1 & creating files
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 57 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 58 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 59 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 60 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 61 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 62 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 63 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 64 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 65 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 66 of 100...
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 67 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 68 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 69 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 70 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 71 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 72 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 73 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 74 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 75 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 76 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 77 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 78 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 79 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 80 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 81 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 82 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 83 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 84 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 85 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 86 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 87 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 88 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 89 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 90 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 91 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 92 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 93 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: rm files [0-100]/./fs_inod: cd ../dir1 & creating files
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 95 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 96 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 97 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 98 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 99 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+Executing loop 100 of 100...
+./fs_inod: cd ../dir1 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir1 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & creating files
+./fs_inod: rm files [0-100]/file100[0-100]
+./fs_inod: cd ../dir2 & removing files
+./fs_inod: touch files [0-100]/file100[0-100]
+./fs_inod: rm files [0-100]/file100[0-100]
+Execution completed
+Tue May 31 15:03:10 MDT 2016

@@ -1,0 +1,105 @@
+'\" t
+.\"     Title: tgt-setup-lun
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 04/13/2018
+.\"    Manual: [FIXME: manual]
+.\"    Source: [FIXME: source]
+.\"  Language: English
+.\"
+.TH "TGT\-SETUP\-LUN" "8" "04/13/2018" "[FIXME: source]" "[FIXME: manual]"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+tgt-setup-lun \- Helper script that creates a target, adds a device to the target, and defines initiators that can connect to the target
+.SH "SYNOPSIS"
+.HP \w'\fBtgt\-setup\-lun\fR\ 'u
+\fBtgt\-setup\-lun\fR \-d\ <device> \-n\ <targetname> [\-b\ <bsname>] [\-t\ <transport>] [\-C\ <control_port>] [initiator_IP...] [\-h]
+.SH "DESCRIPTION"
+.PP
+Creates a target according to the supplied target_name\&. tgtd must be running\&. The format of the default IQN generated from the target name is: "iqn\&.2001\-04\&.com\&.<hostname>\-<target_name>", or a complete IQN may be given\&. The target name must be unique\&.
+.PP
+The script then adds the requested device to the target\&. If specific IP addresses are defined, it adds them to the list of allowed initiators for that target\&. If no IP addresses is defined, it defines that the target accepts any initiator\&.
+.SH "EXAMPLES"
+.PP
+Create a target that uses /dev/sdb1 and allows connections only from 192\&.168\&.10\&.81:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      tgt\-setup\-lun \-d /dev/sdb1 \-n my_target 192\&.168\&.10\&.81
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Create a target that uses /dev/sdb1 and allows connections only from 192\&.168\&.10\&.81 and 192\&.168\&.10\&.82:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      tgt\-setup\-lun \-d /dev/sdb1 \-n my_target 192\&.168\&.10\&.81 192\&.168\&.10\&.82
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Create a target that uses /dev/sdb1 and allows connections from any initiator:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      tgt\-setup\-lun \-d /dev/sdb1 \-n my_target
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Display help:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      tgt\-setup\-lun \-h
+    
+.fi
+.if n \{\
+.RE
+.\}
+.SH "AUTHOR"
+.PP
+Written by Erez Zilber
+.SH "SEE ALSO"
+.PP
+targets\&.conf(5), tgtd(8), tgtadm(8), tgtimg(8), tgt\-admin(8)\&.
+\m[blue]\fB\%http://stgt.sourceforge.net/\fR\m[]
+.SH "REPORTING BUGS"
+.PP
+Report bugs to <stgt@vger\&.kernel\&.org>
+.SH "COPYRIGHT"
+.PP
+Copyright \(co Voltaire Ltd\&. 2008\&.

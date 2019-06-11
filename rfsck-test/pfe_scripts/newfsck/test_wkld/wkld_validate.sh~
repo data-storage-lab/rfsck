@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+#Verify files after executing FSCK.
+
+echo -e "\n\nExecuting wkld_validate.sh\n\n"
+
+absme=`readlink -f $0`
+abshere=`dirname $absme`
+
+if [ $# -eq 0 ];then
+    echo "No input arguments passed"
+    exit 1
+fi
+
+export TEST_DIR=$1
+export TEST_LOG=$2/wkld_log
+export CNT=$3
+
+if [ ! -d $TEST_LOG ];then
+    echo "$TEST_LOG folder does not exist.. Exiting."
+    exit 10
+fi
+
+for (( i = 1; i <= $CNT; i++ ))
+do
+    for (( j = 1; j <= 2; j++ ))
+    do
+        TEST_FILE=$TEST_DIR/file${i}${j}.test
+        echo -e "\tWKLD_VLDT: Validating file - $TEST_FILE"
+        if [ ! -s $TEST_FILE ];then
+            echo "! ! ! File not found: $TEST_FILE"
+            exit 2
+        else
+            echo -e "\tWKLD_VLDT: $TEST_FILE found "
+            FILE_SIZE=`wc -c $TEST_FILE | awk '{ printf $1 }'`
+            if [ $FILE_SIZE -ne 12288 ];then
+                 echo "$TEST_FILE has changed ! ! !"
+                 exit 3
+            else
+                 echo -e "\tWKLD_VLDT:$TEST_FILE is same"
+            fi
+        fi
+    done
+    TEST_FILE3=$TEST_DIR/file${i}3.test
+    echo -e "\tWKLD_VLDT: Validating file - $TEST_FILE3"
+    if [ ! -s $TEST_FILE3 ];then
+         echo "File not found: $TEST_FILE3"
+         exit 4
+    fi
+    FILE_SIZE=`wc -c $TEST_FILE3 | awk '{ printf $1 }'`
+    if [ $FILE_SIZE -ne 24576 ];then
+       echo "$TEST_FILE3 has changed ! ! !"
+       exit 3
+    fi
+    TEST_FILE4=$TEST_DIR/file${i}4.test
+    head -c 12288 $TEST_FILE3 > $TEST_FILE4
+    echo -e "\tWKLD_VLDT: Creating file - $TEST_FILE4"
+    TEST_CHKSM4=$TEST_LOG/file${i}4.test.chksm
+    echo -e "\tWKLD_VLDT: Creating checksum file - $TEST_CHKSM4"
+    md5sum ${TEST_FILE4} | awk '{ print $1 }' |tr -d '\n' > $TEST_CHKSM4
+    echo -en "\tWKLD_VLDT: Checksum of first 12288 bytes: "
+    more $TEST_CHKSM4
+
+    TEST_FILE5=$TEST_DIR/file${i}5.test
+    echo -e "\tWKLD_VLDT: Creating file - $TEST_FILE5"
+    tail -c 12288 $TEST_FILE3 > $TEST_FILE5
+    TEST_CHKSM5=$TEST_LOG/file${i}5.test.chksm
+    echo -e "\tWKLD_VLDT: Creating checksum file - $TEST_CHKSM5"
+    md5sum ${TEST_FILE5} | awk '{ print $1 }' |tr -d '\n' > $TEST_CHKSM5
+    echo -en "\tWKLD_VLDT: Checksum of last 12288 bytes: "
+    more $TEST_CHKSM5
+
+    TEST_CHKSM1=$TEST_LOG/file${i}1.test.chksm
+    echo -e "\tWKLD_VLDT: Executing cmp -s $TEST_CHKSM1 $TEST_CHKSM4"
+    cmp -s $TEST_CHKSM1 $TEST_CHKSM4
+    TMP1=`echo $?`
+    echo -e "\tWKLD_VLDT: TMP1 = $TMP1"
+    TEST_CHKSM2=$TEST_LOG/file${i}2.test.chksm
+    echo -e "\tWKLD_VLDT: Executing cmp -s $TEST_CHKSM2 $TEST_CHKSM4"
+    cmp -s $TEST_CHKSM2 $TEST_CHKSM5
+    TMP2=`echo $?`
+    echo -e "\tWKLD_VLDT: TMP2 = $TMP1"
+   
+    echo
+    if [ $TMP1 -ne 0 ];then
+        echo "File ${i}1 and File ${i}3 contents have changed"
+        exit 5
+    else
+        echo "File ${i}1 and File ${i}3 contents are same"
+    fi
+
+    if [ $TMP2 -ne 0 ];then
+        echo "File ${i}2 and File ${i}3 contents have changed"
+        exit 5
+    else
+        echo "File ${i}2 and File ${i}3 contents are same"
+    fi
+done
+echo -e "\nWorkload logs: $TEST_LOG"
+echo -e "\nDone executing wkld_validate.sh"
+exit 0
+
