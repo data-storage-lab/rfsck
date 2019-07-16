@@ -1,6 +1,5 @@
 ## rfsck-lib ##
-This repository consists the source code for a generic redo log, which can be easily integrated to existing file system checkers to provide logging mechanism. We have published our paper titled "Towards Robust File System Checkers" at FAST'18, and it contains detailed information about the analysis and implementation of rfsck-lib.
-S
+This repository consists the source code for a generic redo log, which can be easily integrated to existing file system checkers to provide logging mechanism. We have published our paper titled **"Towards Robust File System Checkers"** at FAST'18, and it contains detailed information about the analysis and implementation of rfsck-lib.
 
 The repository contains the prototypes of the following:
 
