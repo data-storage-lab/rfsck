@@ -1,5 +1,6 @@
-This is the repository for the "Towards Robust File System Checkers" project
-published in the proceedings of the 16th USENIX Conference on File and Storage Technologies (FAST'18).
+## rfsck-lib ##
+This repository consists the source code for a generic redo log, which can be easily integrated to existing file system checkers to provide logging mechanism. We have published our paper titled "Towards Robust File System Checkers" at FAST'18, and it contains detailed information about the analysis and implementation of rfsck-lib.
+S
 
 The repository contains the prototypes of the following:
 
@@ -34,4 +35,5 @@ For further information about the design, please refer to our paper:
 https://www.usenix.org/conference/fast18/presentation/gatla 
 
 
-Contact: Om Rameshwar Gatla, omram@nmsu.edu
+## Contact ## 
+For any questions or issues please send an email to Om Rameshwar Gatla, ogatla@iastate.edu
