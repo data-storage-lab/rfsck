@@ -1,3 +1,13 @@
+This repository consists source code of e2fsprogs (v1.43.6) along with our REDO LOG source code. The source code for REDO LOG is added in ./lib/ext2fs folder. 
+
+Currently we have only modified e2fsck to utilize the REDO LOG with input option -r /path/to/redo_log. 
+
+Other programs in e2fsprogs can be modified easily to utilize the REDO LOG. Kindly follow our template as used in e2fsck
+
+================================================================================
+
+Original README:
+
 	This is the new version (1.43.6) of the second extended file
 system management programs.
 
