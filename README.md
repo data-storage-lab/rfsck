@@ -30,4 +30,4 @@ To test the resilience of rfsck-lib, we use a fault injection framework that rec
 
 
 ## Contact ## 
-For any questions or issues please send an email to Om (ogatla@iastate.edu) or Duo Zhang (duozhang@iastate.edu). 
+For any questions or issues please send an email to Om R. Gatla(ogatla@iastate.edu) or Duo Zhang(duozhang@iastate.edu). 
